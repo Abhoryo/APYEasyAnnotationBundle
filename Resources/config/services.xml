@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="apy_easy.annotation.listener.class">APY\EasyAnnotationBundle\EventListener\EasyAnnotationListener</parameter>
+    </parameters>
+
+    <services>
+        <service id="apy_easy.annotation.exception.listener" class="%apy_easy.annotation.listener.class%">
+            <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
+            <tag name="kernel.event_listener" event="kernel.request" method="onEvent" />
+            <property name="triggerEvent">kernel.request</property>
+            <argument type="service" id="annotation_reader" />
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="apy_easy.annotation.exception.listener" class="%apy_easy.annotation.listener.class%">
+            <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
+            <tag name="kernel.event_listener" event="kernel.exception" method="onEvent" />
+            <property name="triggerEvent">kernel.exception</property>
+            <argument type="service" id="annotation_reader" />
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="apy_easy.annotation.view.listener" class="%apy_easy.annotation.listener.class%">
+            <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
+            <tag name="kernel.event_listener" event="kernel.view" method="onEvent" />
+            <property name="triggerEvent">kernel.view</property>
+            <argument type="service" id="annotation_reader" />
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="apy_easy.annotation.controller.listener" class="%apy_easy.annotation.listener.class%">
+            <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
+            <property name="triggerEvent">kernel.controller</property>
+            <argument type="service" id="annotation_reader" />
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="apy_easy.annotation.response.listener" class="%apy_easy.annotation.listener.class%">
+            <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
+            <tag name="kernel.event_listener" event="kernel.response" method="onEvent" />
+            <property name="triggerEvent">kernel.response</property>
+            <argument type="service" id="annotation_reader" />
+            <argument type="service" id="service_container" />
+        </service>
+    </services>
+</container>
