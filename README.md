@@ -72,11 +72,7 @@ See full examples [here](https://github.com/Abhoryo/APYEasyAnnotationBundle/blob
  The following documents are available:
 
 * [Installation](https://github.com/Abhoryo/APYEasyAnnotationBundle/blob/master/Resources/doc/installation.md)
-* How it works
-* Parameters of an annotation
+* [How it works](https://github.com/Abhoryo/APYEasyAnnotationBundle/blob/master/Resources/doc/how_it_works.md)
+* [Annotation scope](https://github.com/Abhoryo/APYEasyAnnotationBundle/blob/master/Resources/doc/annotation_scope)
+* [Annotation parameters](https://github.com/Abhoryo/APYEasyAnnotationBundle/blob/master/Resources/doc/annotation_parameters.md)
 * Trigger Event
-* Annotation scope
-
-## TODO
-
-* Docs
