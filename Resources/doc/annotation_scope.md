@@ -3,9 +3,12 @@ Annotation Scope
 
 Three differents scopes for an annotation:
 
-EasyAnnotation::classScope = 'class'
-EasyAnnotation::propertyScope = 'property'
-EasyAnnotation::methodScope = 'method'
+
+* EasyAnnotation::classScope = 'class'
+* EasyAnnotation::propertyScope = 'property'
+* EasyAnnotation::methodScope = 'method'
+
+-
 
 	<?php
 	// MyProject\MyBundle\DefaultController.php
