@@ -9,34 +9,35 @@ Three differents scopes for an annotation:
 * EasyAnnotation::methodScope = 'method'
 
 -
+```php
+<?php
+// MyProject\MyBundle\DefaultController.php
+namespace MyProject\MyBundle\Controller;
 
-	<?php
-	// MyProject\MyBundle\DefaultController.php
-	namespace MyProject\MyBundle\Controller;
+use MyProject\MyBundle\MyAnnotations\MyAnnotation;
 
-	use MyProject\MyBundle\MyAnnotations\MyAnnotation;
+/**
+ * Class scope annotations
+ * @MyAnnotation(12)
+ * @MyAnnotation("text")
+ */
+class DefaultController
+{
+	/**
+	 * Property scope annotations
+	 * @MyAnnotation(34)
+	 * @MyAnnotation("string")
+	 */
+	protected myProperty;
 
 	/**
-	 * Class scope annotations
-	 * @MyAnnotation(12)
-	 * @MyAnnotation("text")
+	 * Method scope annotations
+	 * @MyAnnotation(56)
+			 * @MyAnnotation(value="string")
 	 */
-	class DefaultController
+	public function index2Action()
 	{
-		/**
-		 * Property scope annotations
-		 * @MyAnnotation(34)
-		 * @MyAnnotation("string")
-		 */
-		protected myProperty;
-
-		/**
-		 * Method scope annotations
-		 * @MyAnnotation(56)
-                 * @MyAnnotation(value="string")
-		 */
-		public function index2Action()
-		{
-			...
-		}
+		...
 	}
+}
+```
